@@ -9,6 +9,8 @@ void matriz::establecer(int f,int c){
         this->fila = f;
         this->columna= c;
        
+
+       
         
     }else{
         this->fila= 0;
@@ -65,6 +67,7 @@ void matriz::llenar_matriz(){
        
     }
 }
+
 //_________________________________________________________________________________________________________
 void matriz::imprimir(){
     for(int i=0; i <this->fila; i++){
@@ -81,10 +84,11 @@ void matriz::imprimir(){
 int matriz::getfila(){
     return this->fila;
 }
-
+//_________________________________________________________________________________________________________
 int matriz::getcolumna(){
     return this->columna;
 }
+//___________________________________________________________________________________________________________
 
 matriz & matriz::operator*(matriz& M){ 
     if( this->columna == M.getcolumna() ){
@@ -126,6 +130,21 @@ matriz & matriz::operator+(matriz& M){
         exit(EXIT_FAILURE);
 
     }
+
+
+}
+//________________________________________________________________________________________________________________
+matriz & matriz::operator*(double escalar){
+    
+    matriz *temp=new matriz(this->fila,this->columna);
+    int val;
+    for(int i=0 ;i<this->fila; i++){
+        for(int j=0;j< this->columna;j++){
+            val=escalar*this->getComp_mat(i,j);
+            temp->setComp_mat(i,j,val);
+        }
+    }
+    return *temp;
 
 
 }

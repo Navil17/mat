@@ -14,6 +14,7 @@ class matriz{
         void imprimir();
         matriz & operator*( matriz & );
         matriz & operator+( matriz & );
+        matriz & operator*( double  );
 
         
 

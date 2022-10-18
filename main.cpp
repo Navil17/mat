@@ -8,16 +8,21 @@ int main(){
 
     matriz m1;
     
-    matriz m2;
+    //matriz m2;
 
     //matriz producto(m1*m2);
    // cout<<"\nEl producto de la matriz es :\n"<<endl;
    // producto.imprimir();
 
-    cout<<"\nLa suma de las matrices es :\n"<<endl;
-    matriz sum(m1+m2);
-   
-    sum.imprimir();
+    
+    //matriz sum(m1+m2);
+   // cout<<"\nLa suma de las matrices es :\n"<<endl;
+   // sum.imprimir();
+    double esc;
+    cout<<"\nIngrese el escalar:\n";
+    cin>>esc;
+    matriz escalar(m1*esc);
+    escalar.imprimir();
 
     
 
